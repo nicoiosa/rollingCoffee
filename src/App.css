@@ -1,0 +1,21 @@
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.myMain {
+  flex-grow: 1;
+}
+.bgGreen {
+  background-color: #003c25;
+}
+.trimmed-container {
+  overflow: hidden;
+  height: 300px; /* Adjust the height as needed */
+}
+
+.trimmed-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
