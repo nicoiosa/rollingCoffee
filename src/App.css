@@ -9,13 +9,13 @@
 .bgGreen {
   background-color: #003c25;
 }
-.trimmed-container {
-  overflow: hidden;
-  height: 300px; /* Adjust the height as needed */
-}
-
-.trimmed-image {
+.banner {
+  object-fit: cover;
+  height: 395px;
   width: 100%;
-  height: auto;
+}
+.img-thumbnail{
+  width: 200px;
+  height: 200px;
   object-fit: cover;
 }

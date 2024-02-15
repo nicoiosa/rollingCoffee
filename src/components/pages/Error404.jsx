@@ -7,7 +7,7 @@ const Error404 = () => {
       <div>
         <img src={error} alt="Imagen del error 404" className="img-fluid" />
       </div>
-      <Button>Volver a Inicio</Button>
+      <Button variant="success">Volver a Inicio</Button>
     </div>
   );
 };

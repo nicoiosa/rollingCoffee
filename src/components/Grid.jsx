@@ -6,7 +6,7 @@ const Grid = () => {
     <Container className="my-5">
       <h5 className="display-4">Nuestros Productos</h5>
       <hr />
-      <div className="row gap-3 justify-content-center">
+      <div className="row justify-content-center">
         <CardProducto/>
         <CardProducto/>
         <CardProducto/>

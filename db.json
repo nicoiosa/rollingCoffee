@@ -1,0 +1,20 @@
+{
+  "productos": [
+    {
+      "nombreProducto": "café",
+      "precio": 1500,
+      "categoria": "bebida caliente",
+      "descripcionBreve": "un rico cafecito",
+      "descripcionAmplia": "un rico cafecito",
+      "imagen": "url",
+      "disponible": true,
+      "id": "1"
+    }
+  ],
+  "usuarios": [
+    {
+      "email": "admin@mail.com",
+      "password": "123"
+    }
+  ]
+}

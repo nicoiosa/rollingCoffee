@@ -1,5 +1,6 @@
-import { Card, Button } from "react-bootstrap";
-import americanCoffee from "../assets/americanCoffee.jpg"
+import { Card } from "react-bootstrap";
+import americanCoffee from "../assets/americanCoffee.jpg";
+import { Link } from "react-router-dom";
 const CardProducto = () => {
   return (
     <div className="col-3">
@@ -13,7 +14,7 @@ const CardProducto = () => {
           </Card.Text>
         </Card.Body>
         <Card.Footer className="text-end">
-          <Button variant="success">Ver Mas</Button>
+          <Link className="btn btn-success" to="/detailProducto">Ver Mas</Link>
         </Card.Footer>
       </Card>
     </div>

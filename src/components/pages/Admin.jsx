@@ -1,4 +1,6 @@
-import { Container, Button, Table } from "react-bootstrap";
+import { Container, Table } from "react-bootstrap";
+import ItemProducto from "../ItemProducto";
+import { Link } from "react-router-dom";
 
 const Admin = () => {
   return (
@@ -6,7 +8,7 @@ const Admin = () => {
       <div className="d-flex justify-content-between align-items-center">
         <h2 className="display-2">Productos Disponibles</h2>
         <div>
-          <Button>Agregar</Button>
+          <Link className="btn btn-primary" to="/admin/add"><i className="bi bi-file-earmark-plus"></i></Link>
         </div>
       </div>
       <hr />
@@ -22,58 +24,10 @@ const Admin = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Cafe Americano</td>
-            <td>$250</td>
-            <td>
-              https://lovefoodfeed.com/wp-content/uploads/2023/06/How-to-make-an-americano-px-1200-01.jpg
-            </td>
-            <td>Bebida caliente</td>
-            <td className="d-flex gap-2">
-              <Button variant="warning">Editar</Button>
-              <Button variant="danger">Borrar</Button>
-            </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Cafe Americano</td>
-            <td>$250</td>
-            <td>
-              https://lovefoodfeed.com/wp-content/uploads/2023/06/How-to-make-an-americano-px-1200-01.jpg
-            </td>
-            <td>Bebida caliente</td>
-            <td className="d-flex gap-2">
-              <Button variant="warning">Editar</Button>
-              <Button variant="danger">Borrar</Button>
-            </td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Cafe Americano</td>
-            <td>$250</td>
-            <td>
-              https://lovefoodfeed.com/wp-content/uploads/2023/06/How-to-make-an-americano-px-1200-01.jpg
-            </td>
-            <td>Bebida caliente</td>
-            <td className="d-flex gap-2">
-              <Button variant="warning">Editar</Button>
-              <Button variant="danger">Borrar</Button>
-            </td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Cafe Americano</td>
-            <td>$250</td>
-            <td>
-              https://lovefoodfeed.com/wp-content/uploads/2023/06/How-to-make-an-americano-px-1200-01.jpg
-            </td>
-            <td>Bebida caliente</td>
-            <td className="d-flex gap-2">
-              <Button variant="warning">Editar</Button>
-              <Button variant="danger">Borrar</Button>
-            </td>
-          </tr>
+          <ItemProducto/>
+          <ItemProducto/>
+          <ItemProducto/>
+          <ItemProducto/>
         </tbody>
       </Table>
     </Container>
