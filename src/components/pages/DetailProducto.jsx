@@ -22,8 +22,7 @@ const DetailProducto = () => {
                 café inventado por la empresaria alemana Melitta Bentz.
                 <br />
                 <br />
-                <b>Categoria: </b>Bebida caliente
-                <br />
+                <b>Categoria: </b>Infusion
                 <b>Precio: $250</b>
               </Card.Text>
             </Card.Body>

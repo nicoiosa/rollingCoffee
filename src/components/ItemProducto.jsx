@@ -12,7 +12,7 @@ const ItemProducto = () => {
           className="img-thumbnail"
         />
       </td>
-      <td>Bebida caliente</td>
+      <td>Infusion</td>
       <td className="text-center">
         <Button variant="warning me-lg-2">
           <i className="bi bi-pencil-square"></i>

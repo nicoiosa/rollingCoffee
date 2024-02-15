@@ -1,18 +1,36 @@
 {
   "productos": [
     {
-      "nombreProducto": "café",
-      "precio": 1500,
-      "categoria": "bebida caliente",
-      "descripcionBreve": "un rico cafecito",
-      "descripcionAmplia": "un rico cafecito",
-      "imagen": "url",
-      "disponible": true,
-      "id": "1"
+      "id": "00e1",
+      "nombreProducto": "Cafe",
+      "precio": "100",
+      "imagen": "https://images.pexels.com/photos/2467287/pexels-photo-2467287.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "categoria": "batidos",
+      "descripcionBreve": "Lorem ipsum dolor sit amet consectetur adipiscing elit curabitur just",
+      "descripcionAmplia": "Lorem ipsum dolor sit amet consectetur adipiscing elit tellus eu, ornare nam ullamcorper montes sagittis ultrices augue dapibus sodales lacinia, litora auctor suspendisse est egestas erat lacus dictumst. Nec inceptos iaculis eu enim cum"
+    },
+    {
+      "id": "c2c6",
+      "nombreProducto": "Cafe",
+      "precio": "250",
+      "imagen": "https://images.pexels.com/photos/2775827/pexels-photo-2775827.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "categoria": "infusiones",
+      "descripcionBreve": "Lorem ipsum rhoncus.",
+      "descripcionAmplia": "Lorem ipsum dolor sit amet consectetur adipiscing elit quis."
+    },
+    {
+      "id": "f2c4",
+      "nombreProducto": "Cafe",
+      "precio": "250",
+      "imagen": "https://images.pexels.com/photos/2775827/pexels-photo-2775827.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "categoria": "infusiones",
+      "descripcionBreve": "Lorem ipsum rhoncus.",
+      "descripcionAmplia": "Lorem ipsum dolor sit amet consectetur adipiscing elit quis."
     }
   ],
   "usuarios": [
     {
+      "id": "38e4",
       "email": "admin@mail.com",
       "password": "123"
     }

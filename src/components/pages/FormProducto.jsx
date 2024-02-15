@@ -1,5 +1,6 @@
 import { Container, Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { crearProductoAPI } from "../helpers/queries";
 
 const FormProducto = () => {
   const {
@@ -7,11 +8,14 @@ const FormProducto = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (producto) => {
+  const onSubmit = async (producto) => {
     console.log(producto);
+    const respuesta = await crearProductoAPI(producto);
+    // agregar un msj si el codigo es 201 todo salio bien, caso contrario, de que ocurrio un error
+    console.log(respuesta);
   };
   return (
-    <Container className="myMain">
+    <Container className="myMain py-2">
       <h2 className="display-2">Nuevo producto</h2>
       <hr />
       <Form onSubmit={handleSubmit(onSubmit)} className="my-4">
@@ -72,7 +76,7 @@ const FormProducto = () => {
               required: "El URL de imagen es obligatorio",
               pattern: {
                 value: /(http)?s?:?(\/\/[^"']*\.(?:png|jpg|jpeg|gif|png|svg))/i,
-                message: "URL de imagen invalido",
+                message: "URL de imagen invalido (png|jpg|jpeg|gif|png|svg)",
               },
             })}
           />
@@ -90,8 +94,8 @@ const FormProducto = () => {
             })}
           >
             <option value="">Seleccione una opcion</option>
-            <option value="Infusiones">Infusiones</option>
-            <option value="Batidos">Batidos</option>
+            <option value="infusiones">Infusiones</option>
+            <option value="batidos">Batidos</option>
             <option value="dulce">Dulce</option>
             <option value="salado">Salado</option>
           </Form.Select>
@@ -110,8 +114,8 @@ const FormProducto = () => {
             {...register("descripcionBreve", {
               required: "La descripcion es obligatoria",
               minLength: {
-                value: 20,
-                message: "Debe ingresar como minimo 20 caracteres",
+                value: 10,
+                message: "Debe ingresar como minimo 10 caracteres",
               },
               maxLength: {
                 value: 100,
@@ -134,8 +138,8 @@ const FormProducto = () => {
             {...register("descripcionAmplia", {
               required: "La descripcion es obligatoria",
               minLength: {
-                value: 100,
-                message: "Debe ingresar como minimo 100 caracteres",
+                value: 50,
+                message: "Debe ingresar como minimo 50 caracteres",
               },
               maxLength: {
                 value: 1000,
