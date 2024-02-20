@@ -14,3 +14,13 @@ export const crearProductoAPI = async (producto) => {
     console.log(error);
   }
 };
+
+export const leerProductosAPI = async () => {
+  try {
+    const respuesta = await fetch(URIProducto);
+    console.log(respuesta);
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};

@@ -1,14 +1,29 @@
 import { Container, Table } from "react-bootstrap";
 import ItemProducto from "../ItemProducto";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { leerProductosAPI } from "../helpers/queries";
 
 const Admin = () => {
+  const [productos, setProductos] = useState([]);
+  useEffect(() => {
+    obtenerProductos();
+  }, []);
+  const obtenerProductos = async () => {
+    const respuesta = await leerProductosAPI();
+    if (respuesta.status === 200) {
+      const datos = await respuesta.json();
+      setProductos(datos);
+    }
+  };
   return (
     <Container className="myMain">
       <div className="d-flex justify-content-between align-items-center">
         <h2 className="display-2">Productos Disponibles</h2>
         <div>
-          <Link className="btn btn-primary" to="/admin/add"><i className="bi bi-file-earmark-plus"></i></Link>
+          <Link className="btn btn-primary" to="/admin/add">
+            <i className="bi bi-file-earmark-plus"></i>
+          </Link>
         </div>
       </div>
       <hr />
@@ -24,10 +39,7 @@ const Admin = () => {
           </tr>
         </thead>
         <tbody>
-          <ItemProducto/>
-          <ItemProducto/>
-          <ItemProducto/>
-          <ItemProducto/>
+          {productos.map((producto) => <ItemProducto key={producto.id} producto={producto}/>)}
         </tbody>
       </Table>
     </Container>

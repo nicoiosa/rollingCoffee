@@ -1,18 +1,18 @@
 import { Button } from "react-bootstrap";
-const ItemProducto = () => {
+const ItemProducto = ({ producto }) => {
   return (
     <tr>
-      <td>1</td>
-      <td>Cafe Americano</td>
-      <td>$250</td>
+      <td>{producto.id}</td>
+      <td>{producto.nombreProducto}</td>
+      <td className="text-end">${producto.precio}</td>
       <td className="text-center">
         <img
-          src="https://lovefoodfeed.com/wp-content/uploads/2023/06/How-to-make-an-americano-px-1200-01.jpg"
+          src={producto.imagen}
           alt="Imagen representativa"
           className="img-thumbnail"
         />
       </td>
-      <td>Infusion</td>
+      <td>{producto.categoria}</td>
       <td className="text-center">
         <Button variant="warning me-lg-2">
           <i className="bi bi-pencil-square"></i>
