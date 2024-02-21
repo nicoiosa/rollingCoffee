@@ -13,7 +13,6 @@ const FormProducto = () => {
   const onSubmit = async (producto) => {
     console.log(producto);
     const respuesta = await crearProductoAPI(producto);
-    // agregar un msj si el codigo es 201 todo salio bien, caso contrario, de que ocurrio un error
     if (respuesta.status === 201) {
       Swal.fire({
         title: "Producto creado!",

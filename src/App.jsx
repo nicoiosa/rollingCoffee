@@ -9,6 +9,7 @@ import Home from "./components/pages/Home";
 import Error404 from "./components/pages/Error404";
 import DetailProducto from "./components/pages/DetailProducto";
 import FormProducto from "./components/pages/FormProducto";
+import Login from "./components/pages/login";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/admin" element={<Admin />} />
         <Route exact path="/detailProducto" element={<DetailProducto />} />
         <Route exact path="/admin/add" element={<FormProducto />} />
+        <Route exact path="/login" element={<Login />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
       <Foot />
