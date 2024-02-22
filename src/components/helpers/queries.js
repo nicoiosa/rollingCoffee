@@ -18,8 +18,18 @@ export const crearProductoAPI = async (producto) => {
 export const leerProductosAPI = async () => {
   try {
     const respuesta = await fetch(URIProducto);
-    console.log(respuesta);
     return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const borrarProductoAPI = async (id) => {
+  try {
+    const answer = await fetch(`${URIProducto}/${id}`, {
+      method: "DELETE",
+    });
+    return answer
   } catch (error) {
     console.log(error);
   }

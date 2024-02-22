@@ -27,7 +27,6 @@ const FormProducto = () => {
         icon: "error",
       });
     }
-    console.log(respuesta);
   };
   return (
     <Container className="myMain py-2">
