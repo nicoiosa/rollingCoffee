@@ -1,36 +1,59 @@
 import { Container, Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { crearProductoAPI } from "../helpers/queries";
+import { crearProductoAPI, obtenerProductoAPI } from "../helpers/queries";
 import Swal from "sweetalert2";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
-const FormProducto = () => {
+const FormProducto = ({ edit, title }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
+    setValue,
   } = useForm();
+  const { id } = useParams();
+  useEffect(() => {
+    if (edit) {
+      cargarDatosProducto();
+    }
+  }, []);
+  const cargarDatosProducto = async () => {
+    const respuesta = await obtenerProductoAPI(id);
+    if (respuesta.status === 200) {
+      const productoBuscado = await respuesta.json();
+      setValue(`nombreProducto`, productoBuscado.nombreProducto);
+      setValue(`precio`, productoBuscado.precio);
+      setValue(`imagen`, productoBuscado.imagen);
+      setValue(`categoria`, productoBuscado.categoria);
+      setValue(`descripcionBreve`, productoBuscado.descripcionBreve);
+      setValue(`descripcionAmplia`, productoBuscado.descripcionAmplia);
+    }
+  };
   const onSubmit = async (producto) => {
-    console.log(producto);
-    const respuesta = await crearProductoAPI(producto);
-    if (respuesta.status === 201) {
-      Swal.fire({
-        title: "Producto creado!",
-        text: `El producto ${producto.nombreProducto} fue creado correctamente`,
-        icon: "success",
-      });
-      reset();
+    if (edit) {
     } else {
-      Swal.fire({
-        title: "Ocurrio un error!",
-        text: `El producto ${producto.nombreProducto} no fue creado correctamente, pruebe nuevamente en unos minutos`,
-        icon: "error",
-      });
+      const respuesta = await crearProductoAPI(producto);
+      if (respuesta.status === 201) {
+        Swal.fire({
+          title: "Producto creado!",
+          text: `El producto ${producto.nombreProducto} fue creado correctamente`,
+          icon: "success",
+        });
+        reset();
+      } else {
+        Swal.fire({
+          title: "Ocurrio un error!",
+          text: `El producto ${producto.nombreProducto} no fue creado correctamente, pruebe nuevamente en unos minutos`,
+          icon: "error",
+        });
+      }
     }
   };
   return (
     <Container className="myMain py-2">
-      <h2 className="display-2">Nuevo producto</h2>
+      <h2 className="display-2">{title}</h2>
       <hr />
       <Form onSubmit={handleSubmit(onSubmit)} className="my-4">
         <Form.Group className="mb-3" controlId="formNombreProdcuto">

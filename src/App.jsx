@@ -18,8 +18,17 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/admin" element={<Admin />} />
-        <Route exact path="/detailProducto" element={<DetailProducto />} />
-        <Route exact path="/admin/add" element={<FormProducto />} />
+        <Route exact path="/detailProducto/:" element={<DetailProducto />} />
+        <Route
+          exact
+          path="/admin/add"
+          element={<FormProducto edit={false} title="Nuevo producto" />}
+        />
+        <Route
+          exact
+          path="/admin/edit/:id"
+          element={<FormProducto edit={true} title="Editar producto" />}
+        />
         <Route exact path="/login" element={<Login />} />
         <Route path="*" element={<Error404 />} />
       </Routes>

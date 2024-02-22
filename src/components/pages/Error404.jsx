@@ -1,5 +1,5 @@
+import { Link } from "react-router-dom";
 import error from "../../assets/error404.png";
-import { Button } from "react-bootstrap";
 
 const Error404 = () => {
   return (
@@ -7,7 +7,7 @@ const Error404 = () => {
       <div>
         <img src={error} alt="Imagen del error 404" className="img-fluid" />
       </div>
-      <Button variant="success">Volver a Inicio</Button>
+      <Link className="btn btn-success" to="/">Volver a Inicio</Link>
     </div>
   );
 };

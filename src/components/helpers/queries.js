@@ -23,13 +23,21 @@ export const leerProductosAPI = async () => {
     console.log(error);
   }
 };
+export const obtenerProductoAPI = async (id) => {
+  try {
+    const respuesta = await fetch(`${URIProducto}/${id}`);
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 export const borrarProductoAPI = async (id) => {
   try {
     const answer = await fetch(`${URIProducto}/${id}`, {
       method: "DELETE",
     });
-    return answer
+    return answer;
   } catch (error) {
     console.log(error);
   }
