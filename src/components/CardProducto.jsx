@@ -1,6 +1,7 @@
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-const CardProducto = ({producto}) => {
+
+const CardProducto = ({ producto }) => {
   return (
     <div className="col-12 col-md-6 col-lg-3">
       <Card className="h-100">
@@ -13,7 +14,12 @@ const CardProducto = ({producto}) => {
           </Card.Text>
         </Card.Body>
         <Card.Footer className="text-end">
-          <Link className="btn btn-success" to="/detailProducto">Ver Mas</Link>
+          <Link
+            className="btn btn-success"
+            to={"/detailProducto/" + producto.id}
+          >
+            Ver Mas
+          </Link>
         </Card.Footer>
       </Card>
     </div>
