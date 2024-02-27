@@ -1,8 +1,12 @@
 import { Container, Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { crearProductoAPI, obtenerProductoAPI } from "../helpers/queries";
+import {
+  crearProductoAPI,
+  editarProductoAPI,
+  obtenerProductoAPI,
+} from "../helpers/queries";
 import Swal from "sweetalert2";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 
 const FormProducto = ({ edit, title }) => {
@@ -14,6 +18,7 @@ const FormProducto = ({ edit, title }) => {
     setValue,
   } = useForm();
   const { id } = useParams();
+  const navegacion = useNavigate();
   useEffect(() => {
     if (edit) {
       cargarDatosProducto();
@@ -33,6 +38,21 @@ const FormProducto = ({ edit, title }) => {
   };
   const onSubmit = async (producto) => {
     if (edit) {
+      const answer = await editarProductoAPI(producto, id);
+      if (answer.status === 200) {
+        Swal.fire({
+          title: "Producto modificado!",
+          text: `El producto ${producto.nombreProducto} fue modificado correctamente`,
+          icon: "success",
+        });
+        navegacion("/admin")
+      } else {
+        Swal.fire({
+          title: "Ocurrio un error!",
+          text: `El producto ${producto.nombreProducto} no fue modificado correctamente, pruebe nuevamente en unos minutos`,
+          icon: "error",
+        });
+      }
     } else {
       const respuesta = await crearProductoAPI(producto);
       if (respuesta.status === 201) {

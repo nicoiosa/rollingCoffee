@@ -1,38 +1,38 @@
 {
   "productos": [
     {
-      "id": "7f08",
       "nombreProducto": "Brownie con almendras",
-      "precio": "800",
+      "precio": "1500",
       "imagen": "https://images.pexels.com/photos/887853/pexels-photo-887853.jpeg",
       "categoria": "Dulce",
       "descripcionBreve": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-      "descripcionAmplia": "fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+      "descripcionAmplia": "fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "id": "7f08"
     },
     {
-      "id": "1abe",
       "nombreProducto": "Brownie",
-      "precio": "500",
+      "precio": "900",
       "imagen": "https://images.pexels.com/photos/2067396/pexels-photo-2067396.jpeg",
       "categoria": "Dulce",
       "descripcionBreve": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      "descripcionAmplia": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      "descripcionAmplia": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "id": "1abe"
     },
     {
-      "id": "b1fe",
       "nombreProducto": "Cafe",
-      "precio": "250",
+      "precio": "1250",
       "imagen": "https://images.pexels.com/photos/2575835/pexels-photo-2575835.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "categoria": "Infusiones",
-      "descripcionBreve": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-      "descripcionAmplia": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      "descripcionBreve": "Cafe común",
+      "descripcionAmplia": "Un rico cafecito común, muy rico y todo guau es icreible",
+      "id": "b1fe"
     }
   ],
   "usuarios": [
     {
       "id": "38e4",
       "email": "admin@mail.com",
-      "password": "123"
+      "password": "totoro88"
     }
   ]
 }

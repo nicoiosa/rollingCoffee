@@ -9,7 +9,7 @@ const Login = () => {
     reset,
   } = useForm();
   const onSubmit = () => {
-    console.log("Funciono");
+    
     reset();
   };
   return (
