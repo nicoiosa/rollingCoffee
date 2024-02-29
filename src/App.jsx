@@ -10,12 +10,19 @@ import DetailProducto from "./components/pages/DetailProducto";
 import Login from "./components/pages/Login";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
-import Admin from "./components/pages/Admin";
+import { useState } from "react";
+import { set } from "react-hook-form";
 
 function App() {
+  const usuario =
+    JSON.parse(sessionStorage.getItem("signInRollingCoffee")) || "";
+  const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
   return (
     <BrowserRouter>
-      <Menu />
+      <Menu
+        usuarioLogueado={usuarioLogueado}
+        setUsuarioLogueado={setUsuarioLogueado}
+      />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route
@@ -28,7 +35,11 @@ function App() {
           }
         />
         <Route exact path="/detailProducto/:id" element={<DetailProducto />} />
-        <Route exact path="/login" element={<Login />} />
+        <Route
+          exact
+          path="/login"
+          element={<Login setUsuarioLogueado={setUsuarioLogueado} />}
+        />
         <Route path="*" element={<Error404 />} />
       </Routes>
       <Foot />

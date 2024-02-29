@@ -27,7 +27,7 @@ const Admin = () => {
         </div>
       </div>
       <hr />
-      <Table striped bordered hover>
+      <Table responsive striped bordered hover>
         <thead>
           <tr>
             <th>Cod</th>

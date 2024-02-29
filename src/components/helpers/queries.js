@@ -69,7 +69,7 @@ export const signIn = (usuario) => {
     usuario.password === userAdmin.password
   ) {
     sessionStorage.setItem(
-      "signInRollingCofee",
+      "signInRollingCoffee",
       JSON.stringify(userAdmin.email)
     );
     return true;
