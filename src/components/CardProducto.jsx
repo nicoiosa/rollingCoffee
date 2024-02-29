@@ -1,4 +1,4 @@
-import { Card } from "react-bootstrap";
+import { Card, CardText } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const CardProducto = ({ producto }) => {
@@ -6,12 +6,14 @@ const CardProducto = ({ producto }) => {
     <div className="col-12 col-md-6 col-lg-3">
       <Card className="h-100">
         <Card.Img variant="top" src={producto.imagen} />
-        <Card.Body>
-          <Card.Title>{producto.nombreProducto}</Card.Title>
-          <Card.Text>
-            Descripcion: {producto.descripcionBreve} <br />
+        <Card.Body className="d-flex flex-column justify-content-between">
+          <div>
+            <Card.Title>{producto.nombreProducto}</Card.Title>
+            <Card.Text>Descripcion: {producto.descripcionBreve}</Card.Text>
+          </div>
+          <CardText>
             <b>Precio: ${producto.precio}</b>
-          </Card.Text>
+          </CardText>
         </Card.Body>
         <Card.Footer className="text-end">
           <Link

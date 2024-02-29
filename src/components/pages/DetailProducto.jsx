@@ -1,4 +1,4 @@
-import { Container, Card, Row, Col } from "react-bootstrap";
+import { Container, Card, Row, Col, CardText } from "react-bootstrap";
 import { obtenerProductoAPI } from "../helpers/queries";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -27,14 +27,13 @@ const DetailProducto = () => {
             <Card.Body>
               <Card.Title>{producto.nombreProducto}</Card.Title>
               <hr />
-              <Card.Text>
-                {producto.descripcionAmplia}
-                <br />
-                <br />
+              <Card.Text>{producto.descripcionAmplia}</Card.Text>
+              <CardText>
                 <b>Categoria: </b> {producto.categoria}
-                <br />
+              </CardText>
+              <CardText>
                 <b>Precio: </b>${producto.precio}
-              </Card.Text>
+              </CardText>
             </Card.Body>
           </Col>
         </Row>
