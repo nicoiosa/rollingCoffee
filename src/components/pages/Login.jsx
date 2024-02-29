@@ -1,16 +1,31 @@
 import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { signIn } from "../helpers/queries";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm();
-  const onSubmit = () => {
-    
-    reset();
+  const navegacion = useNavigate();
+  const onSubmit = (usuario) => {
+    if (signIn(usuario)) {
+      Swal.fire({
+        title: "Bienvenido!",
+        text: `Ingresaste al sistema Rolling Coffee`,
+        icon: "success",
+      });
+      navegacion("/admin/");
+    } else {
+      Swal.fire({
+        title: "Ocurrio un error!",
+        text: `Los datos son incorrectos`,
+        icon: "error",
+      });
+    }
   };
   return (
     <Container className="myMain py-5">
@@ -40,7 +55,7 @@ const Login = () => {
               pattern: {
                 value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm,
                 message:
-                  "La contraseña debe contener al menos 8 caracteres, 1 mayuscula 1 minuscula y 1 numero",
+                  "La contraseña debe contener al menos 8 caracteres, 1 mayuscula, 1 minuscula y 1 numero",
               },
             })}
           />
