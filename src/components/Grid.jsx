@@ -20,7 +20,7 @@ const Grid = () => {
       <h5 className="display-4">Nuestros Productos</h5>
       <hr />
       <div className="row justify-content-center row-gap-4">
-      {productos.map((producto) => <CardProducto key={producto.id} producto={producto}/>)}
+      {productos.map((producto) => <CardProducto key={producto._id} producto={producto}/>)}
       </div>
     </Container>
   );

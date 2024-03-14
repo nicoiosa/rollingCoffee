@@ -16,7 +16,7 @@ const ItemProducto = ({ producto, setProductos }) => {
       cancelButtonText: "Cancelar!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const answer = await borrarProductoAPI(producto.id);
+        const answer = await borrarProductoAPI(producto._id);
         if (answer.status === 200) {
           Swal.fire({
             title: "Eliminado!",
@@ -40,7 +40,7 @@ const ItemProducto = ({ producto, setProductos }) => {
   };
   return (
     <tr>
-      <td>{producto.id}</td>
+      <td>{producto._id}</td>
       <td>{producto.nombreProducto}</td>
       <td className="text-end">${producto.precio}</td>
       <td className="text-center">
@@ -52,7 +52,7 @@ const ItemProducto = ({ producto, setProductos }) => {
       </td>
       <td>{producto.categoria}</td>
       <td className="text-center">
-        <Link className="btn btn-warning me-lg-2" to={"/admin/edit/" + producto.id}>
+        <Link className="btn btn-warning me-lg-2" to={"/admin/edit/" + producto._id}>
           <i className="bi bi-pencil-square"></i>
         </Link>
         <Button variant="danger" onClick={borrarProducto}>
