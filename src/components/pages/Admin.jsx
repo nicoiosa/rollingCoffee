@@ -30,7 +30,6 @@ const Admin = () => {
       <Table responsive striped bordered hover>
         <thead>
           <tr>
-            <th>Cod</th>
             <th>Producto</th>
             <th>Precio</th>
             <th>URL de imagen</th>
